@@ -1,0 +1,19 @@
+<%=form_for @picture do |f|%>
+    <%=f.label :title%><br>
+    <%=f.text_field :title%><br><br>
+    <%=f.label :description%><br>
+    <%=f.text_field :description%><br><br>
+    <%=f.label :url%><br>
+    <%=f.text_field :url%><br><br>
+    <%=f.label "tags"%><br><br>
+    <%=f.collection_check_boxes :tag_ids, Tag.all, :id, :tag_name %>
+    <br>
+Create a new tag:
+    <%=f.fields_for :tags, @picture.tags.build do |tags_fields|%>
+    <%=tags_fields.text_area :tag_name%>
+    <%end%>
+    <%=f.hidden_field :user_id, :value => @user.id%>
+    <br>
+    <br>
+    <%=f.submit%>
+    <%end%>

@@ -1,0 +1,8 @@
+<h1><%=@tag.tag_name%></h1>
+<%=button_to "return to main page", pictures_path,method: :get%><br>
+<%@tag.pictures.each do |pic|%>
+    <%=link_to picture_path(pic) do%>
+    <img src=<%=pic.url%> style="float: left; height: 20em; margin-right: 1%; margin-bottom: 0.5em;">
+        <%end%>
+    <%end%>
+    <p style="clear: both;">

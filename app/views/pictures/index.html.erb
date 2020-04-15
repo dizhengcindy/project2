@@ -1,0 +1,18 @@
+<h1>Welcome to Events <%=@user.username%></h1>
+<h3>Share your precious moments with us</h3>
+
+<%=button_to "My posts", user_path(@user), method: :get%>
+<%=button_to "My profile", edit_user_path(@user), method: :get%>
+<%=button_to "post a new picture", new_picture_path, method: :get%><br>
+
+<%= form_tag ({controller: 'auth', action: 'destroy', method: 'post'}) do %>
+<input type=submit value='logout'>
+<% end %>
+
+<br>
+<%@pictures.each do |pic|%>
+<%=link_to picture_path(pic) do%>
+<img src=<%=pic.url%> style="float: left; height: 20em; margin-right: 1%; margin-bottom: 0.5em;">
+<%end%>
+<%end%>
+<p style="clear: both;">

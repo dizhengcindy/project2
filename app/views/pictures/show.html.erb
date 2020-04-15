@@ -1,0 +1,42 @@
+<h3><%=@picture.title%></h3>
+
+<%=button_to "return to main page", pictures_path,method: :get%><br>
+
+<%= form_tag ({controller: 'auth', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
+  <% end %>
+    <br>
+
+<%=link_to @picture.user.username, user_path(@picture.user)%><br>
+<img src=<%=@picture.url%> width="20%" ><br>
+<%=@picture.description%>
+<%@picture.tags.each do |tag|%>
+#<%=link_to tag.tag_name, tag_path(tag)%>
+<%end%>
+
+<br>
+<%if @allowed%>
+<%=button_to "Edit post", edit_picture_path,method: :get %>
+<%end%>
+<br>
+
+Comments<br>
+<%@picture.comments.each do |comment|%>
+<%=comment.user.username%>:<br>
+ <%=comment.content%>
+ <%if comment.user == @user %>
+ <%=link_to "Delete",comment,method: :delete, data: { confirm: "Want to delete this comment?" }%>
+<%end%> 
+<br><br>
+ <%end%>
+<br>
+
+Leave a comment
+<%= form_for @picture.comments.build do |f| %>
+  <%= f.hidden_field :picture_id %>
+  <%=f.hidden_field :user_id, :value=> @user.id  %>
+    <%= f.label :content, "New Comment" %><br>
+    <%= f.text_area :content %>
+  <br/>
+  <%= f.submit %>
+<% end %>
