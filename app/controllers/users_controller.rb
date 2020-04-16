@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+before_action :redirect_user, only: [:show,:edit,:update,:destroy]
 before_action :set_user, only: [:show,:edit,:update,:destroy]
     def new
         @user = User.new
@@ -10,11 +11,19 @@ before_action :set_user, only: [:show,:edit,:update,:destroy]
         session[:user_id] = @user.id
         redirect_to pictures_path
       else
+        flash[:error_message_for_user] = @user.errors.full_messages
         render :new
       end
     end
 
-    def eidt
+    def show
+      
+    end
+
+    def edit
+      if @user != current_user
+        redirect_to pictures_path
+      end
     end
 
     def update
@@ -26,6 +35,7 @@ before_action :set_user, only: [:show,:edit,:update,:destroy]
     end
 
     def destroy
+      session.delete :user_id
       @user.destroy
       redirect_to login_path
     end

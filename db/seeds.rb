@@ -8,12 +8,13 @@
 User.destroy_all
 Picture.destroy_all
 Tag.destroy_all
-#PictureTag.destroy_all
+Comment.destroy_all
+PictureTag.destroy_all
 
-u1 = User.create(username: "Jack", password: "123456abc",email:"jack98765@gmail.com")
-u2 = User.create(username: "Jess", password: "123456efd",email:"jess98765@gmail.com")
-u3 = User.create(username: "Jenni", password: "123456xyz",email:"jenni98765@gmail.com")
-u4 = User.create(username: "Cathey", password: "9876456zzz",email:"cathey98765@gmail.com")
+u1 = User.create(username: "Jack", password: "123456Abc#",email:"jack98765@gmail.com")
+u2 = User.create(username: "Jess", password: "123456?Efd",email:"jess98765@gmail.com")
+u3 = User.create(username: "Jenni", password: "123456X!yz",email:"jenni98765@gmail.com")
+u4 = User.create(username: "Cathey", password: "&9876456Zzz",email:"cathey98765@gmail.com")
 #tags = ["date-night", "hang-out-with-friends","get-awaty","new-restaurant","take-a-walk","pandemic"]
 tag1 = Tag.create(tag_name:"date-night")
 tag2 = Tag.create(tag_name:"hang-out-with-friends")

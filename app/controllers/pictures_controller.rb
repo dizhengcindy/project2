@@ -5,7 +5,8 @@ before_action :set_pic, only:[:show,:edit,:update,:destroy]
     def index
         @status = logged_in?
         @pictures = Picture.all
-        @user = current_user
+       # @user = current_user
+        @tags = Tag.top_tags
     end
 
     def show
@@ -21,6 +22,7 @@ before_action :set_pic, only:[:show,:edit,:update,:destroy]
         @picture= Picture.new
         @user = current_user
         @tags = Tag.top_tags
+     
     end
 
     def create
@@ -30,6 +32,7 @@ before_action :set_pic, only:[:show,:edit,:update,:destroy]
         else
             @user = current_user
             @tags = Tag.top_tags
+         
             render :new
         end
     end
@@ -43,7 +46,7 @@ before_action :set_pic, only:[:show,:edit,:update,:destroy]
             @top_tags.each{|tag|@tags_array<<tag }
             @mytags.each{|tag|@tags_array<<tag }
             @tags = @tags_array.uniq{|tag| tag.tag_name}
-   
+            
 
     end
     def update

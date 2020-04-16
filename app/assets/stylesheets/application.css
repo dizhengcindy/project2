@@ -9,7 +9,49 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+ *=require bootstrap
  *= require_tree .
  *= require_self
  */
+ 
+
+ h1{
+     color:#6cd3e6
+ }
+ h3{
+     color:#6cd3e6
+ }
+ #mypost{
+     color:black
+ }
+ /* #pop-tags{
+    color:#6cd3e6
+} */
+a{
+    color:#37478a
+}
+/* .custom_button{
+    color:blue
+} */
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+    }
+    /* img {
+        float:  center;
+        width:  90%;
+        height: 90%;
+        background-size: cover;
+    } */
+    .photo {
+        padding: 20px 1 2 6;
+        /* border: 1px solid #fff;
+        outline: 1px solid #000; */
+        margin: 1px;
+        width: 360px;
+        height: 360px;
+        display: block;
+     }

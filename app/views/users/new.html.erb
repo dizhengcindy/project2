@@ -1,12 +1,34 @@
+<%if  flash[:error_message_for_user]%>
+	<%flash[:error_message_for_user].each do |message|%>
+	<h3 style = “color:red” ><%=message%></h3>
+	<%end%>
+<%end%>
+
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
 <h1>Create a new user</h1>
-<%=form_for @user do |f|%>
-    <%=f.label :username%>
-    <%=f.text_field :username%><br><br>
-    <%=f.label :email%>
-    <%=f.text_field :email%><br><br>
-    <%=f.label :password%>
-    <%=f.password_field :password%><br><br>
-    <%=f.label :password_confirmation%>
-    <%=f.password_field :password_confirmation%><br><br>
-    <%=f.submit%>
+</div>
+<%=form_for @user,:html =>{:class=>"form-horizontal center"}  do |f|%>
+    <div class="form-group">
+    <%=f.label :username,:class=>"col-sm-3 col-form-label"%>
+    <%=f.text_field :username,:class=>"col-sm-3"%>
+    </div>
+    <div class="form-group">
+    <%=f.label :email,:class=>"col-sm-3 col-form-label"%>
+    <%=f.text_field :email, :placeholder=>"12345678@example.com",:class=>"col-sm-3"%>
+    </div>
+    <div class="form-group">
+    <%=f.label :password,:class=>"col-sm-3 col-form-label"%>
+    <%=f.password_field :password,:class=>"col-sm-3"%>
+    </div>
+    <div class="form-group">
+    <%=f.label "password confirmation",:class=>"col-sm-3 col-form-label"%>
+    <%=f.password_field :password_confirmation,:class=>"col-sm-3"%>
+    </div>
+    <div class="col-sm-10">
+    <%=f.submit "create user",:class => "btn btn-outline-info"%>
+    </div>
     <%end%>
+    <br>
+    <div class="col-sm-10">
+    <%=button_to "back to login",login_path,:class => "btn btn-outline-info",method: :get%>
+    </div>
