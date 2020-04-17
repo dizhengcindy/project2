@@ -10,6 +10,7 @@
 ## sign up: 
 
 - email must have @ symbol, and passwords must have lowercase, uppercase, numbers, and one of #?!@$%^&*-
+- must have all the information filled out to sign up (validation)
 
 ## after login you are at picture index page
 ## navigator:
@@ -18,7 +19,7 @@
 
 -  "My posts" to see all the pictures you uploaded, and you can click on any picture to see details
 
-- "Post a new picture" to upload a new picture with url, it will only show the top 6 most popular tags when create pictures, you can create your own tag
+- "Post a new picture" to upload a new picture with url, it will only show the top 6 most popular tags when create pictures, you can create your own tag (validation: must have title and url).
 -  "Log out" to log out and return to login page
 
 ## "Popular tags"
@@ -35,7 +36,9 @@
 ## Edit a picture
 
 - it will have all the tags you chose before with the top 6 most popular tags
+- must have title and url (validation)
 - you can also delete the picture
+
 
 
 
