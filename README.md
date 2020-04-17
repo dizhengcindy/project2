@@ -1,24 +1,42 @@
 # README
+## login: 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- can find username and password in seed and copy paste
+    
+    username: "Jack", password: "123456Abc#"
+    
+    username: "Jess", password: "123456?Efd"
 
-Things you may want to cover:
+## sign up: 
 
-* Ruby version
+- email must have @ symbol, and passwords must have lowercase, uppercase, numbers, and one of #?!@$%^&*-
 
-* System dependencies
+## after login you are at picture index page
+## navigator:
+    
+-  "My profile" to edit email and username, or delete account (it will delete all related pictures and comments).
 
-* Configuration
+-  "My posts" to see all the pictures you uploaded, and you can click on any picture to see details
 
-* Database creation
+- "Post a new picture" to upload a new picture with url, it will only show the top 6 most popular tags when create pictures, you can create your own tag
+-  "Log out" to log out and return to login page
 
-* Database initialization
+## "Popular tags"
 
-* How to run the test suite
+- it is sorted by how many times the tag has been tagged to a picture, so it changes.
+- you can click on any tag to see all the pictures are tagged with that tag.
 
-* Services (job queues, cache servers, search engines, etc.)
+## click on any picture takes you to the picture show page 
 
-* Deployment instructions
+-  you can click on username to see all the pictures that user posted
+-  you can make a comment and delete it
+- if it is your own picture, there is an edit button to allow you to edit it
 
-* ...
+## Edit a picture
+
+- it will have all the tags you chose before with the top 6 most popular tags
+- you can also delete the picture
+
+
+
+

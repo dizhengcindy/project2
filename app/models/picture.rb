@@ -4,6 +4,7 @@ class Picture < ApplicationRecord
     has_many :picture_tags
     has_many :tags, through: :picture_tags
     accepts_nested_attributes_for :tags
+    validates :title,:url, presence: true
 
     def tags_attributes=(tag_attributes)
         tag_attributes.values.each do |tag_attribute|

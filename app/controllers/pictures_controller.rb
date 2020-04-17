@@ -32,7 +32,7 @@ before_action :set_pic, only:[:show,:edit,:update,:destroy]
         else
             @user = current_user
             @tags = Tag.top_tags
-         
+            flash[:message] = "must have title and url!"
             render :new
         end
     end
