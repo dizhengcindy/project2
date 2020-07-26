@@ -1,4 +1,8 @@
 # README
+## Tech highlights
+
+- Rails application 
+
 ## login: 
 
 - can find username and password in seed and copy paste
