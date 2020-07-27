@@ -2,6 +2,8 @@
 ## Tech highlights
 
 - Rails application 
+- Use session stored user_id (allows users to authenticate once and remain signed in for future requests)
+- Use Rails's has_secure_password to store and authenticate user login credentials securely
 
 ## login: 
 
