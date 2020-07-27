@@ -1,4 +1,7 @@
 # README
+## Demo
+https://www.youtube.com/watch?v=BRBE2t2alFQ
+
 ## Tech highlights
 
 - Rails application 
